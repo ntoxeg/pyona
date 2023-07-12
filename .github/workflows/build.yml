@@ -25,8 +25,8 @@ env:
         HATCH_BUILD_HOOKS_ENABLE
     CIBW_TEST_COMMAND: >
         python -c
-        "from ona.NAR import _program;
-        assert _program("NARexe", []) == 0
+        "import subprocess;
+        assert subprocess.call(["NAR"], close_fds=False) == 0
         "
     CIBW_SKIP: >
         pp*

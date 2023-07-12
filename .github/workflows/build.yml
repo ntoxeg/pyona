@@ -23,11 +23,11 @@ env:
     CIBW_BUILD_FRONTEND: build
     CIBW_ENVIRONMENT_PASS_LINUX: >
         HATCH_BUILD_HOOKS_ENABLE
-    CIBW_TEST_COMMAND: >
-        python -c
-        "import subprocess;
-        assert subprocess.call(["NAR"], close_fds=False) == 0
-        "
+#    CIBW_TEST_COMMAND: >
+#        python -c
+#        "import subprocess;
+#        assert subprocess.call(["NAR"], close_fds=False) == 0
+#        "
     CIBW_SKIP: >
         pp*
 

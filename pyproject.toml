@@ -10,6 +10,7 @@ authors = [{name = "Adrian Borucki", email = "ab@synthillect.ai"}]
 classifiers = [
   "Development Status :: 4 - Beta",
   "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: C",
   "Programming Language :: Python",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
@@ -65,6 +66,17 @@ commands = [
   "chmod +x ona/NAR/NARexe",
 ]
 artifacts = ["ona/NAR/NARexe"]
+
+[tool.hatch.build.targets.wheel.hooks.mypyc]
+enable-by-default = false
+dependencies = ["hatch-mypyc>=0.14.1"]
+require-runtime-dependencies = true
+mypy-args = [
+  "--no-warn-unused-ignores",
+]
+exclude = [
+  "/ona/NAR"
+]
 
 [terminal.styles]
 spinner = "dots"
